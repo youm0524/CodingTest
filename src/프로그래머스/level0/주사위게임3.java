@@ -1,42 +1,33 @@
 package 프로그래머스.level0;
 
-public class 주사위게임3 {
-        public int 주사위게임3(int a, int b, int c, int d) {
-            int answer = 0;
-            if(a==b && b==c && c==d && d==a)
-                answer = 1111*a;
-            else if(a==b && b==c && c!=d)
-                answer = (10*a + d)*(10*a + d);
-            else if(a==b && b!=c && b==d)
-                answer = (10*a + c)*(10*a + c);
-            else if(a!=b && b==c && c==d)
-                answer = (10*b + a)*(10*b + a);
-            else if(a!=b && a==c && c==d)
-                answer = (10*a + b)*(10*a + b);
-            else if(a==b&&b!=c)
-                if(c==d)
-                    answer = (a+c) * Math.abs(a-c);
-                else
-                    answer = c*d;
-            else if(a==c && c!=b)
-                if(b==d)
-                    answer = (a+b)*Math.abs(a-b);
-                else
-                    answer = b*d;
-            else if(a==d && d!=b)
-                if(b==c)
-                    answer = (a+b)*Math.abs(a-b);
-                else
-                    answer = b*c;
-            else if(a!=b && b!=c && c!=d && d!=a){
-                int min = a;
-                min = Math.min(min,b);
-                min = Math.min(min,c);
-                min = Math.min(min,d);
-                answer = min;
-            }
+import java.util.Arrays;
 
-            return answer;
+class Solution {
+    public int solution(int a, int b, int c, int d) {
+
+        int[] dice = { a, b, c, d };
+        Arrays.sort(dice);
+
+        int ans = 0;
+
+        if (dice[0] == dice[3]) {
+            ans = 1111 * dice[3];
+        } else if (dice[0] == dice[2] || dice[1] == dice[3]) {
+            ans = (int) Math.pow(dice[1] * 10 + (dice[0] + dice[3] - dice[1]), 2);
+        } else if (dice[0] == dice[1] && dice[2] == dice[3]) {
+            ans = (dice[0] + dice[3]) * (dice[3] - dice[0]);
+        } else if (dice[0] == dice[1]) {
+            ans = dice[2] * dice[3];
+        } else if (dice[1] == dice[2]) {
+            ans = dice[0] * dice[3];
+        } else if (dice[2] == dice[3]) {
+            ans = dice[0] * dice[1];
+        } else {
+            ans = dice[0];
         }
 
+        return ans;
+    }
 }
+
+
