@@ -4,11 +4,11 @@ class Solution {
         int answer = 1;
         HashMap<String, Integer> map = new HashMap<>();
         //,로 종류를 나누기
-        for(String[] cloth : clothes){
-            String wear = cloth[0];
-            String type = cloth[1];
-            map.put(type,0);
-        }
+        // for(String[] cloth : clothes){
+        //     String wear = cloth[0];
+        //     String type = cloth[1];
+        //     map.put(type,0);
+        // }
         
         for(String[] cloth : clothes){
             String wear = cloth[0];
