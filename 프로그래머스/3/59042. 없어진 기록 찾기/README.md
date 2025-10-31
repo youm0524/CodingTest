@@ -1,6 +1,6 @@
 # [level 3] 없어진 기록 찾기 - 59042 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/59042#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/59042?language=mysql) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@ Empty
 
 ### 제출 일자
 
-2025년 09월 15일 12:31:52
+2025년 11월 01일 08:44:00
 
 ### 문제 설명
 
