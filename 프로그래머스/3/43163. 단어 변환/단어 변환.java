@@ -1,28 +1,31 @@
-import java.util.*;
 class Solution {
-    private static boolean visited[];
-    private static int answer = Integer.MAX_VALUE;
+    static int answer =50;
     public int solution(String begin, String target, String[] words) {
-        int cnt = 0;
-        visited = new boolean[words.length];
-        dfs(begin, target, words, cnt);
-        return answer == Integer.MAX_VALUE ? 0 : answer;
+        boolean[] visited = new boolean[words.length];
+        int count = 0;
+        dfs(begin, target, words,visited,count);
+        if(answer == 50)return 0;
+        return answer;
     }
-    public void dfs(String begin, String target, String[] words,int cnt){
+    public void dfs(String begin, String target, String[] words, boolean[] visited, int count){
         if(begin.equals(target)){
-            answer = Math.min(cnt, answer);
+            if(count<answer)answer = count;
         }
-        
         for(int i = 0; i<words.length; i++){
-            int k = 0;
-            for(int j = 0; j<begin.length(); j++){
-                if(begin.charAt(j)==words[i].charAt(j))k++;
+            int diff = 0;
+            for(int j = 0; j<words[i].length(); j++){
+                if(words[i].charAt(j)!=begin.charAt(j)){
+                    diff++;
+                    if(diff>2) break;
+                }
             }
-            if(k==begin.length()-1 && !visited[i]){
+            if(!visited[i] && diff==1){
                 visited[i] = true;
-                dfs(words[i], target, words,cnt+1);
+                dfs(words[i], target,words,visited,count+1);
+                System.out.println(answer);
                 visited[i] = false;
             }
         }
+        
     }
 }
