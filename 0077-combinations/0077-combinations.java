@@ -7,7 +7,7 @@ class Solution {
         return result;
     }
     public void dfs(List<List<Integer>> result, int n, int k, List<Integer> path, int count,boolean[] visited){
-        if(count==k){
+        if(path.size()==k){
             result.add(new ArrayList<>(path));
             return;
         }
