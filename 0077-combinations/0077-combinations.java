@@ -12,13 +12,10 @@ class Solution {
             return;
         }
         for(int i = start; i<n+1; i++){
-            if(!visited[i]){
             path.add(i);
-            visited[i] = true;
             dfs(result, i+1,n, k, path,visited);
             path.remove(path.size()-1);
-            visited[i] = false;
-            }            
+                        
         }
 
     }
