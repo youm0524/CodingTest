@@ -3,17 +3,20 @@ class Solution {
     public int solution(int[] citations) {
         int answer = 0;
         Arrays.sort(citations);
-        int n = citations.length;
-        for(int i = 0; i<n; i++){
-            int h = n-i;
-            if(citations[i]>=h){
-                answer=h;
+        int max = 0;
+        int start = citations[citations.length-1];
+        for(int i= start; i>=0; i--){
+            int count = 0;
+            for(int j = citations.length-1; j>=0; j--){
+                if(citations[j]>=i){
+                    count++;
+                }
+            }
+            if(count>=i){
+                answer = i;
                 break;
             }
-            
         }
-                
-        
         return answer;
     }
 }
