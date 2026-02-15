@@ -1,47 +1,46 @@
 import java.util.*;
 class Solution {
-    static List<Integer>[] graph;
-    static int answer;
+    static ArrayList<Integer>[] graph;
+    static int min;
     public int solution(int n, int[][] wires) {
-        answer = Integer.MAX_VALUE;
         graph = new ArrayList[n+1];
+        min = Integer.MAX_VALUE;
         for(int i = 1; i<=n; i++){
             graph[i] = new ArrayList<>();
         }
-        for(int[] wire : wires){
-            int a = wire[0];
-            int b = wire[1];
-            graph[a].add(b);
-            graph[b].add(a);
+        for(int i= 0; i<wires.length; i++){
+            graph[wires[i][0]].add(wires[i][1]);
+            graph[wires[i][1]].add(wires[i][0]);
         }
         for(int i = 0; i<wires.length; i++){
-            int a = wires[i][0];
-            int b = wires[i][1];
+            int v1 = wires[i][0];
+            int v2 = wires[i][1];
+            graph[v1].remove(Integer.valueOf(v2));
+            graph[v2].remove(Integer.valueOf(v1));
             
-            boolean[] visited = new boolean[n+1];
-            
-            graph[a].remove(Integer.valueOf(b));
-            graph[b].remove(Integer.valueOf(a));
+            boolean[] visited = new boolean[n + 1];
             
             int cnt = dfs(1, visited);
             
-            
             int diff = Math.abs(cnt - (n - cnt));
-            answer = Math.min(answer, diff);
-            graph[a].add(b);
-            graph[b].add(a);
+            min = Math.min(min, diff);
+            
+            graph[v1].add(v2);
+            graph[v2].add(v1);
+            
         }
-        
-        return answer;
+        return min;
     }
     public int dfs(int node, boolean[] visited){
         visited[node] = true;
         int cnt = 1;
-        for(int i : graph[node]){
-            if(!visited[i]){
-                cnt+=dfs(i, visited);
+        for(int next : graph[node]){
+            if(!visited[next]){
+                cnt+=dfs(next, visited);
             }
         }
+        
         return cnt;
+        
     }
 }
