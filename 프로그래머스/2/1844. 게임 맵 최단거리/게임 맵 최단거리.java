@@ -1,37 +1,32 @@
 import java.util.*;
 class Solution {
-    private static int[] dx = {0,0,-1,1};
-    private static int[] dy = {1,-1,0,0};
-    
+    static int[] dx = {0,1,0,-1};
+    static int[] dy = {1,0,-1,0};
     public int solution(int[][] maps) {
-        int answer = 0;
+        int answer = -1;
         int n = maps.length;
         int m = maps[0].length;
-        boolean visited[][] = new boolean[n][m];
         Queue<int[]> queue = new LinkedList<>();
         queue.add(new int[]{0,0,1});
+        boolean[][] visited = new boolean[n][m];
         visited[0][0] = true;
-        
         while(!queue.isEmpty()){
             int[] tmp = queue.poll();
-            int x = tmp[0];
-            int y = tmp[1];
-            int cnt = tmp[2];
-            
-            if(x==n-1 && y ==m-1)return cnt;
-            
-            //이동하기
+            int a = tmp[0];
+            int b = tmp[1];
+            int c = tmp[2];
+            if(a==n -1 && b ==m-1) return c;
             for(int i = 0; i<4; i++){
-                int nx = x+dx[i];
-                int ny = y+dy[i];
-                if(nx<n && nx>=0 && ny<m && ny>=0 && maps[nx][ny] ==1
-                  && !visited[nx][ny]) {
+                int nx = a+dx[i];
+                int ny = b+dy[i];
+                if(nx<=n-1 && ny <=m-1 && nx>=0 && ny>=0 && !visited[nx][ny] 
+                  && maps[nx][ny] == 1){
+                    queue.add(new int[]{nx,ny,c+1});
                     visited[nx][ny] = true;
-
-                    queue.add(new int[]{nx,ny,cnt+1});
                 }
             }
         }
-        return -1;
+        
+        return answer;
     }
-} 
+}
