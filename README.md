@@ -2,15 +2,23 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 <!---LeetCode Topics Start-->
 # LeetCode Topics
 ## Hash Table
-|  |
-| ------- |
+| Problem Name | Difficulty |
+| ------- | ------- |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/youm0524/CodingTest/tree/master/0017-letter-combinations-of-a-phone-number) |
 ## String
-|  |
-| ------- |
+| Problem Name | Difficulty |
+| ------- | ------- |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/youm0524/CodingTest/tree/master/0017-letter-combinations-of-a-phone-number) |
 ## Backtracking
-|  |
-| ------- |
+| Problem Name | Difficulty |
+| ------- | ------- |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/youm0524/CodingTest/tree/master/0017-letter-combinations-of-a-phone-number) |
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0136-single-number](https://github.com/youm0524/CodingTest/tree/main/0136-single-number/) | Easy |
+## Bit Manipulation
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0136-single-number](https://github.com/youm0524/CodingTest/tree/main/0136-single-number/) | Easy |
 <!---LeetCode Topics End-->
