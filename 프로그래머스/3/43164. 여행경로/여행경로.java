@@ -1,29 +1,32 @@
 import java.util.*;
 class Solution {
+    static String[][] tickets;
+    static boolean[] visited;
+    static String[] answer;
     public String[] solution(String[][] tickets) {
-        String[] answer = {};
-        //알파벳 순서 저장
-        Map<String, PriorityQueue<String>> map = new HashMap<>();
-        //티켓 저장
-        for(String[] ticket : tickets){
-            map.putIfAbsent(ticket[0], new PriorityQueue());
-            map.get(ticket[0]).add(ticket[1]);
-        }
+        this.tickets = tickets;
+        Arrays.sort(this.tickets, Comparator.comparing(i -> i[1]));
+        visited = new boolean[tickets.length];
         List<String> path = new ArrayList<>();
-        dfs(map, path, "ICN");
-        Collections.reverse(path);
-        answer = path.toArray(new String[0]);
-        
+        path.add("ICN");
+        dfs("ICN", 0, path);
         return answer;
     }
-    public void dfs(Map<String, PriorityQueue<String>> map, List<String> path, String start){
-        while (map.get(start) != null && !map.get(start).isEmpty()) {
-    String next = map.get(start).poll();
-    dfs(map, path,next);
-}
-    path.add(start);
+    public void dfs(String start, int depth, List<String> path){
+        if(answer != null) return;
+        if(depth == tickets.length){
+            answer = path.toArray(new String[0]);
+            return;
+        }
+        for(int i = 0; i<tickets.length; i++){
+            if(!visited[i] && tickets[i][0].equals(start)){
+                visited[i] = true;
+                path.add(tickets[i][1]);
+                dfs(tickets[i][1],depth + 1, path);
+                path.remove(path.size()-1);
+                visited[i] = false;
+            }
+        }
         
     }
-        
-    
 }
