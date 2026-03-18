@@ -48,4 +48,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0122-best-time-to-buy-and-sell-stock-ii](https://github.com/youm0524/CodingTest/tree/main/0122-best-time-to-buy-and-sell-stock-ii/) | Medium |
+## Database
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1280-students-and-examinations](https://github.com/youm0524/CodingTest/tree/main/1280-students-and-examinations/) | Easy |
 <!---LeetCode Topics End-->
