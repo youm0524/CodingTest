@@ -52,5 +52,6 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0577-employee-bonus](https://github.com/youm0524/CodingTest/tree/main/0577-employee-bonus/) | Easy |
+| [1211-queries-quality-and-percentage](https://github.com/youm0524/CodingTest/tree/main/1211-queries-quality-and-percentage/) | Easy |
 | [1280-students-and-examinations](https://github.com/youm0524/CodingTest/tree/main/1280-students-and-examinations/) | Easy |
 <!---LeetCode Topics End-->
