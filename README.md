@@ -59,5 +59,6 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1211-queries-quality-and-percentage](https://github.com/youm0524/CodingTest/tree/main/1211-queries-quality-and-percentage/) | Easy |
 | [1280-students-and-examinations](https://github.com/youm0524/CodingTest/tree/main/1280-students-and-examinations/) | Easy |
 | [1633-percentage-of-users-attended-a-contest](https://github.com/youm0524/CodingTest/tree/main/1633-percentage-of-users-attended-a-contest/) | Easy |
+| [1729-find-followers-count](https://github.com/youm0524/CodingTest/tree/main/1729-find-followers-count/) | Easy |
 | [2356-number-of-unique-subjects-taught-by-each-teacher](https://github.com/youm0524/CodingTest/tree/main/2356-number-of-unique-subjects-taught-by-each-teacher/) | Easy |
 <!---LeetCode Topics End-->
