@@ -1,30 +1,30 @@
 class Solution {
     public int[] solution(int[] sequence, int k) {
         int[] answer = new int[2];
-        int l = 0;
-        int r = 0;
-        int sum = sequence[l];
-        int len = 1000000000;
-        while(l<sequence.length){
-            
-            //System.out.println(sum);
+        int left = 0;
+        int right = 0;
+        int min = Integer.MAX_VALUE;
+        int sum = sequence[0];
+        while(left<sequence.length){
             if(sum==k){
-                if((r-l)<len){
-                    len = r-l;
-                    answer[0] = l;
-                    answer[1] = r;
+                if((right-left+1)<min){
+                    min = right - left + 1;
+                    answer[0] = left;
+                    answer[1] = right;
                 }
-                sum-=sequence[l];
-                l++;
-            }
-            else if(sum<k){
-                if (r == sequence.length - 1) break;
-                r++;
-                sum += sequence[r];
+                sum -= sequence[left];
+                left++;
+
             }
             else if(sum>k){
-                sum-=sequence[l];
-                l++;
+                sum-=sequence[left];
+                left++;
+            }
+            else{
+                if(right<sequence.length-1){
+                    right++;
+                    sum+=sequence[right];
+                }else break;
             }
         }
         return answer;
