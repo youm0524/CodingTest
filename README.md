@@ -53,6 +53,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- | ------- |
 | [0577-employee-bonus](https://github.com/youm0524/CodingTest/tree/main/0577-employee-bonus/) | Easy |
 | [0596-classes-with-at-least-5-students](https://github.com/youm0524/CodingTest/tree/main/0596-classes-with-at-least-5-students/) | Easy |
+| [0619-biggest-single-number](https://github.com/youm0524/CodingTest/tree/main/0619-biggest-single-number/) | Easy |
 | [1070-product-sales-analysis-iii](https://github.com/youm0524/CodingTest/tree/main/1070-product-sales-analysis-iii/) | Medium |
 | [1075-project-employees-i](https://github.com/youm0524/CodingTest/tree/main/1075-project-employees-i/) | Easy |
 | [1141-user-activity-for-the-past-30-days-i](https://github.com/youm0524/CodingTest/tree/main/1141-user-activity-for-the-past-30-days-i/) | Easy |
