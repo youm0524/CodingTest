@@ -62,5 +62,6 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1280-students-and-examinations](https://github.com/youm0524/CodingTest/tree/main/1280-students-and-examinations/) | Easy |
 | [1633-percentage-of-users-attended-a-contest](https://github.com/youm0524/CodingTest/tree/main/1633-percentage-of-users-attended-a-contest/) | Easy |
 | [1729-find-followers-count](https://github.com/youm0524/CodingTest/tree/main/1729-find-followers-count/) | Easy |
+| [1978-employees-whose-manager-left-the-company](https://github.com/youm0524/CodingTest/tree/main/1978-employees-whose-manager-left-the-company/) | Easy |
 | [2356-number-of-unique-subjects-taught-by-each-teacher](https://github.com/youm0524/CodingTest/tree/main/2356-number-of-unique-subjects-taught-by-each-teacher/) | Easy |
 <!---LeetCode Topics End-->
