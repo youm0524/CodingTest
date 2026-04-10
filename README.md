@@ -63,6 +63,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1164-product-price-at-a-given-date](https://github.com/youm0524/CodingTest/tree/main/1164-product-price-at-a-given-date/) | Medium |
 | [1211-queries-quality-and-percentage](https://github.com/youm0524/CodingTest/tree/main/1211-queries-quality-and-percentage/) | Easy |
 | [1280-students-and-examinations](https://github.com/youm0524/CodingTest/tree/main/1280-students-and-examinations/) | Easy |
+| [1327-list-the-products-ordered-in-a-period](https://github.com/youm0524/CodingTest/tree/main/1327-list-the-products-ordered-in-a-period/) | Easy |
 | [1484-group-sold-products-by-the-date](https://github.com/youm0524/CodingTest/tree/main/1484-group-sold-products-by-the-date/) | Easy |
 | [1633-percentage-of-users-attended-a-contest](https://github.com/youm0524/CodingTest/tree/main/1633-percentage-of-users-attended-a-contest/) | Easy |
 | [1667-fix-names-in-a-table](https://github.com/youm0524/CodingTest/tree/main/1667-fix-names-in-a-table/) | Easy |
