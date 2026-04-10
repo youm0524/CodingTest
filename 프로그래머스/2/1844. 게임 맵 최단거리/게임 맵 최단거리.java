@@ -1,32 +1,36 @@
 import java.util.*;
 class Solution {
-    static int[] dx = {0,1,0,-1};
-    static int[] dy = {1,0,-1,0};
     public int solution(int[][] maps) {
-        int answer = -1;
+        int answer = 1;
         int n = maps.length;
         int m = maps[0].length;
+        int[] dx = {1,0,-1,0};
+        int[] dy = {0,1,0,-1};
         Queue<int[]> queue = new LinkedList<>();
-        queue.add(new int[]{0,0,1});
         boolean[][] visited = new boolean[n][m];
+        queue.add(new int[]{0,0});
         visited[0][0] = true;
+        int[][] dist = new int[n][m];
+        dist[0][0] = 1;
         while(!queue.isEmpty()){
-            int[] tmp = queue.poll();
-            int a = tmp[0];
-            int b = tmp[1];
-            int c = tmp[2];
-            if(a==n -1 && b ==m-1) return c;
+            int[] route = queue.poll();
+            int a = route[0];
+            int b = route[1];
+            //System.out.println("x:"+a+"y"+b);
+            if(a == n-1 && b == m-1){
+                return dist[a][b];
+            }
             for(int i = 0; i<4; i++){
                 int nx = a+dx[i];
                 int ny = b+dy[i];
-                if(nx<=n-1 && ny <=m-1 && nx>=0 && ny>=0 && !visited[nx][ny] 
-                  && maps[nx][ny] == 1){
-                    queue.add(new int[]{nx,ny,c+1});
+                if(nx>=0 && nx<n && ny>=0 && ny<m && maps[nx][ny]==1
+                  && !visited[nx][ny]){
+                    dist[nx][ny] = dist[a][b]+1;
                     visited[nx][ny] = true;
+                    queue.add(new int[]{nx,ny});
                 }
             }
         }
-        
-        return answer;
+        return -1;
     }
 }
