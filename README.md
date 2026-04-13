@@ -66,6 +66,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1280-students-and-examinations](https://github.com/youm0524/CodingTest/tree/main/1280-students-and-examinations/) | Easy |
 | [1327-list-the-products-ordered-in-a-period](https://github.com/youm0524/CodingTest/tree/main/1327-list-the-products-ordered-in-a-period/) | Easy |
 | [1484-group-sold-products-by-the-date](https://github.com/youm0524/CodingTest/tree/main/1484-group-sold-products-by-the-date/) | Easy |
+| [1527-patients-with-a-condition](https://github.com/youm0524/CodingTest/tree/main/1527-patients-with-a-condition/) | Easy |
 | [1633-percentage-of-users-attended-a-contest](https://github.com/youm0524/CodingTest/tree/main/1633-percentage-of-users-attended-a-contest/) | Easy |
 | [1667-fix-names-in-a-table](https://github.com/youm0524/CodingTest/tree/main/1667-fix-names-in-a-table/) | Easy |
 | [1729-find-followers-count](https://github.com/youm0524/CodingTest/tree/main/1729-find-followers-count/) | Easy |
