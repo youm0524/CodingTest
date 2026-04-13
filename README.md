@@ -56,6 +56,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0196-delete-duplicate-emails](https://github.com/youm0524/CodingTest/tree/main/0196-delete-duplicate-emails/) | Easy |
 | [0577-employee-bonus](https://github.com/youm0524/CodingTest/tree/main/0577-employee-bonus/) | Easy |
 | [0596-classes-with-at-least-5-students](https://github.com/youm0524/CodingTest/tree/main/0596-classes-with-at-least-5-students/) | Easy |
+| [0610-triangle-judgement](https://github.com/youm0524/CodingTest/tree/main/0610-triangle-judgement/) | Easy |
 | [0619-biggest-single-number](https://github.com/youm0524/CodingTest/tree/main/0619-biggest-single-number/) | Easy |
 | [1045-customers-who-bought-all-products](https://github.com/youm0524/CodingTest/tree/main/1045-customers-who-bought-all-products/) | Medium |
 | [1070-product-sales-analysis-iii](https://github.com/youm0524/CodingTest/tree/main/1070-product-sales-analysis-iii/) | Medium |
