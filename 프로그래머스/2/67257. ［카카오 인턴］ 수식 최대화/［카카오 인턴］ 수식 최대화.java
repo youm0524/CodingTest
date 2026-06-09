@@ -10,14 +10,12 @@ class Solution {
             {'*', '+', '-'},
             {'*', '-', '+'}
         };
-        for (char[] priority : priorities) {
-            answer = Math.max(answer, Math.abs(calculate(expression, priority)));
+        for(char[] priority : priorities){
+            answer = Math.max(answer, Math.abs(calculate(expression,priority)));
         }
-        
         return answer;
-        
     }
-    public long calculate(String expression, char[] priorities){
+    public long calculate(String expression,char[] priority){
         Stack<Long> nums = new Stack<>();
         Stack<Character> op = new Stack<>();
         StringBuilder number = new StringBuilder();
@@ -28,13 +26,13 @@ class Solution {
             }else{
                 nums.push(Long.parseLong(number.toString()));
                 number.setLength(0);
-                while(!op.isEmpty() && getPriority(op.peek(), priorities) >=
-                     getPriority(c, priorities)){
-                     calc(nums, op);
+                //여기서 연산을 시작
+                while(!op.isEmpty() && getPriori(op.peek(),priority)>=
+                     getPriori(c, priority)){
+                    calc(nums, op);
                 }
                 op.push(c);
             }
-            
         }
         nums.push(Long.parseLong(number.toString()));
         while (!op.isEmpty()) {
@@ -42,7 +40,7 @@ class Solution {
         }
         return nums.pop();
     }
-    public int getPriority(char op, char[] priority) {
+    public int getPriori(char op, char[] priority) {
         for (int i = 0; i < priority.length; i++) {
             if (priority[i] == op) {
                 return 3 - i;
