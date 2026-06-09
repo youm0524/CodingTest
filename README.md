@@ -57,6 +57,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0184-department-highest-salary](https://github.com/youm0524/CodingTest/tree/main/0184-department-highest-salary/) | Medium |
 | [0196-delete-duplicate-emails](https://github.com/youm0524/CodingTest/tree/main/0196-delete-duplicate-emails/) | Easy |
 | [0550-game-play-analysis-iv](https://github.com/youm0524/CodingTest/tree/main/0550-game-play-analysis-iv/) | Medium |
+| [0570-managers-with-at-least-5-direct-reports](https://github.com/youm0524/CodingTest/tree/main/0570-managers-with-at-least-5-direct-reports/) | Medium |
 | [0577-employee-bonus](https://github.com/youm0524/CodingTest/tree/main/0577-employee-bonus/) | Easy |
 | [0596-classes-with-at-least-5-students](https://github.com/youm0524/CodingTest/tree/main/0596-classes-with-at-least-5-students/) | Easy |
 | [0610-triangle-judgement](https://github.com/youm0524/CodingTest/tree/main/0610-triangle-judgement/) | Easy |
