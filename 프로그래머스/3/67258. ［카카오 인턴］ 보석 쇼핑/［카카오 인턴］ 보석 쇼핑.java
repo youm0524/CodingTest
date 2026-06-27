@@ -2,16 +2,16 @@ import java.util.*;
 class Solution {
     public int[] solution(String[] gems) {
         int[] answer = new int[2];
-        Set<String> kind = new HashSet<>();
+        Set<String> kinds = new HashSet<>();
         for(String gem : gems){
-            kind.add(gem);
+            kinds.add(gem);
         }
         int l = 0;
         int r = 0;
         Map<String, Integer> map = new HashMap<>();
         int minL = Integer.MAX_VALUE;
         while(true){
-            if(map.size()==kind.size()){
+            if(map.size()==kinds.size()){
                 if(r-l<minL){
                     minL = r-l;
                     answer[0] = l+1;
