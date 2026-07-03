@@ -1,13 +1,16 @@
--- 코드를 입력하세요
-with a as(
-select sum(f.total_order+j.total_order) as su, f.flavor
-from first_half f, july j
-where j.flavor = f.flavor
-group by j.flavor
-order by su desc
-limit 3
-)
-
-select a.flavor from a;
-# select * from a;
+-- 코드를 입력하세
+select flavor
+from(
+    select flavor, sum(total_order) as total
+    from(
+        select total_order, flavor
+        from july
+        union all
+        select total_order, flavor
+        from first_half
+    ) t
+    group by flavor
+    ORDER BY total DESC
+    limit 3
+) p
 

@@ -1,25 +1,24 @@
-import java.util.*;
 class Solution {
-    static String[] dic = {"A","E","I","O","U"};
-    static List<String> list = new ArrayList<>();
+    static int count = 0;
+    static int answer;
+    static String[] words = new String[]{"A","E","I","O","U"};
     public int solution(String word) {
-        int answer = 0;
-        int len = 0;
-        dfs("",0);
-        for(int i = 0; i<list.size(); i++){
-            if(list.get(i).equals(word)){
-                answer = i;
-                break;
-            }
-        }
-        
+        answer = 0;
+        dfs("",word);
         return answer;
     }
-    public void dfs(String s,int len){
-        list.add(s);
-        if(len == dic.length)return;
-        for(int i = 0; i<dic.length;i++){
-            dfs(s+dic[i],len+1);
+    public void dfs(String cur, String word){
+        if(cur.length()>0){
+            count++;
+            if(cur.equals(word)){
+                answer = count;
+                return;
+            }
         }
+        if(cur.length()==5)return;
+        for(int i = 0; i<words.length; i++){
+            dfs(cur + words[i],word);
+        }
+        
     }
 }
