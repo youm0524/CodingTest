@@ -44,22 +44,32 @@ public class j1695 {
 
 
     }
-    static int dfs(int x, int y) {
-        visited[x][y] = true;
+    static int dfs(int startX, int startY) {
+        Stack<int[]> stack = new Stack<>();
 
-        // 현재 집 한 채
-        int count = 1;
+        stack.push(new int[]{startX, startY});
+        visited[startX][startY] = true;
 
-        for (int k = 0; k < 4; k++) {
-            int nx = x + dx[k];
-            int ny = y + dy[k];
+        int count = 0;
 
-            if (nx < 0 || nx >= N || ny < 0 || ny >= N) {
-                continue;
-            }
+        while (!stack.isEmpty()) {
+            int[] current = stack.pop();
 
-            if (map[nx][ny] == 1 && !visited[nx][ny]) {
-                count += dfs(nx, ny);
+            int x = current[0];
+            int y = current[1];
+
+            count++;
+
+            for (int k = 0; k < 4; k++) {
+                int nx = x + dx[k];
+                int ny = y + dy[k];
+
+                if(nx>=0 && nx < N && ny>=0 && ny<N) {
+                    if (map[nx][ny] == 1 && !visited[nx][ny]) {
+                        visited[nx][ny] = true;
+                        stack.push(new int[]{nx, ny});
+                    }
+                }
             }
         }
 
