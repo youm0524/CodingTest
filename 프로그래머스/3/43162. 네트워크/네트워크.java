@@ -16,7 +16,7 @@ class Solution {
     }
     public void dfs(int i, int n, int[][] computers){
         visited[i] = true;
-        for(int j = 0; j<n; j++){
+        for(int j = 0;j<n;j++){
             if(!visited[j] && computers[i][j]==1){
                 System.out.println("i"+i+" j"+j);
                 dfs(j,n,computers);
