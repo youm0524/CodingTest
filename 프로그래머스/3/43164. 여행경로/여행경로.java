@@ -19,7 +19,7 @@ class Solution {
             return;
         }
         for(int i = 0; i<tickets.length; i++){
-            if(!visited[i] && tickets[i][0].equals(start)){
+            if(!visited[i]&&tickets[i][0].equals(start)){
                 visited[i] = true;
                 path.add(tickets[i][1]);
                 dfs(tickets[i][1],depth + 1, path);
