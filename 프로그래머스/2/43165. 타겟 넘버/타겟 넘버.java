@@ -6,7 +6,7 @@ class Solution {
     }
     
     public void dfs(int[] numbers, int target, int depth, int sum){
-        if(depth == numbers.length){
+        if(depth==numbers.length){
             if(sum == target)answer++;
             return;
         }
