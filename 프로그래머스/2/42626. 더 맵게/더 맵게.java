@@ -7,7 +7,7 @@ class Solution {
             pq.add(i);
         }
         //섞지 않아도 되는경우 
-        if(pq.peek()>=K){
+        if(pq.peek() >= K){
             return 0;
         }
         int cnt = 0;
