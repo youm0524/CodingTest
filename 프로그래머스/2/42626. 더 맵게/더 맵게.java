@@ -3,43 +3,27 @@ class Solution {
     public int solution(int[] scoville, int K) {
         int answer = 0;
         PriorityQueue<Integer> pq = new PriorityQueue<>();
-        for(int i : scoville){
-            pq.add(i);
+        for(int sco:scoville){
+            pq.add(sco);
         }
-        //섞지 않아도 되는경우 
-        if(pq.peek() >= K){
-            return 0;
-        }
-        int cnt = 0;
-        while(!pq.isEmpty()){
-            int a = pq.poll();
-            if(a>=K){
-                return cnt;
+        while(true){
+            if(pq.peek()>=K)break;
+            if(pq.size()==2){
+               int a = pq.poll();
+                int b = pq.poll();
+                if(a + b*2 <K){
+                    answer = -1;
+                    break;
+                }else if(a<K){
+                    answer++;
+                    break;
+                }
             }
-            if(pq.size()<1){
-                return -1;
-            }
-            int b = pq.poll();
-            int c = a + b*2;
-            cnt++;
-            pq.add(c);
+            
+            int n = pq.poll() + pq.poll() *2;
+            pq.add(n);
+            answer++;
         }
-
-//         for(int i = 0; i<pq.size(); i++){
-//             int n  = pq.poll();
-//             System.out.println(n);
-//             if(n>=K){
-//                 return cnt;
-//             }
-//             int b = pq.poll();
-//             int c = n + b*b;
-//             //System.out.println(c);
-//             cnt++;
-//             //System.out.println(cnt);
-
-//             pq.add(c);
-//         }
-        
-        return -1;
+        return answer;
     }
 }
