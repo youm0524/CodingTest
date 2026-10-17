@@ -1,18 +1,15 @@
-import java.util.*;
 class Solution {
     public int solution(int[] players, int m, int k) {
         int answer = 0;
-        Queue<Integer> queue = new LinkedList<>();
-        for(int i = 0; i<players.length; i++){
-           while(!queue.isEmpty() && queue.peek() <= i)queue.poll();
-            int need = players[i]/m;
-            if(queue.size()<need){
-                int add = need - queue.size();
-                for(int j = 0;j<add; j++){
-                    queue.add(i+k);
-                    answer++;
+        int[] server = new int[players.length];
+
+        for(int i = 0; i<=23; i++){
+            if(players[i]/m>server[i]){
+                int need = players[i]/m-server[i];
+                for(int j = i; j<Math.min(i+k,players.length); j++){
+                    server[j] += need;
                 }
-                
+                answer+=need;
             }
         }
         return answer;
