@@ -1,33 +1,36 @@
 import java.util.*;
 class Solution {
     public int solution(int[][] info, int n, int m) {
-        int answer = Integer.MAX_VALUE;
-        int[][] dp = new int[info.length+1][m+1];
+
+        int[][] dp = new int[info.length+1][m];
         for(int i = 0; i<=info.length; i++){
             Arrays.fill(dp[i],Integer.MAX_VALUE);
         }
-        
         dp[0][0] = 0;
-        for(int cnt = 0; cnt<info.length; cnt++){
-            int a = info[cnt][0];
-            int b = info[cnt][1];
-            for(int cm = 0; cm<m; cm++){
-                if(dp[cnt][cm]==Integer.MAX_VALUE)continue;
-                //a넣는 경우
-                if(dp[cnt][cm]+a<n){
-                    dp[cnt+1][cm] = Math.min(dp[cnt+1][cm],dp[cnt][cm]+a);
+        for(int i = 0; i<info.length; i++){
+            int cn = info[i][0];
+            int cm = info[i][1];
+            for(int b = 0; b<m; b++){
+                if (dp[i][b] == Integer.MAX_VALUE) continue;
+
+                //A가 훔칠 경우
+                if(dp[i][b]+cn<n){
+                    dp[i+1][b] = Math.min(dp[i+1][b],dp[i][b]+cn);
                 }
-                if(cm+b<m){
-                    dp[cnt+1][cm+b] = Math.min(dp[cnt+1][cm+b], dp[cnt][cm]);
+                //B가 훔칠 경후
+                if(cm + b <m){
+                    dp[i+1][cm+b] = Math.min(dp[i+1][cm+b],dp[i][b]);
                 }
             }
             
+            
         }
-        for(int cm = 0; cm < m; cm++){
-            answer = Math.min(answer, dp[info.length][cm]);
+        int answer = Integer.MAX_VALUE;
+
+        for (int b = 0; b < m; b++) {
+            answer = Math.min(answer, dp[info.length][b]);
         }
 
         return answer == Integer.MAX_VALUE ? -1 : answer;
     }
-    
 }
