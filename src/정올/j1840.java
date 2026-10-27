@@ -6,12 +6,15 @@ public class j1840 {
     static int[] dx = {-1,0,1,0};
     static int[] dy = {0,1,0,-1};
     static int[][] map;
+    static int n;
+    static int m;
+    static boolean[][] visited;
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
 
         map = new int[n][m];
 
@@ -25,64 +28,46 @@ public class j1840 {
 
         // 여기부터 풀이 작성
 
-        int count = 0;
+        int cnt = 0;
         int prev = 0;
         while(true){
-
             int tmp = count(map);
             if(tmp==0)break;
             prev = tmp;
-            bfs(0,0);
-//            for(int i = 0; i<n; i++){
-//                for(int j =0; j<m; j++){
-//                    System.out.print(map[i][j]);
-//                }
-//                System.out.println("");
-//            }
+            visited = new boolean[n][m];
+            //(0,0)에서 돌면서 1을 만나면 인접한 애들
+            dfs(0,0);
+
             for(int i = 0; i<n; i++){
                 for(int j = 0; j<m; j++){
-                    if(map[i][j]==2){
-                        map[i][j]=0;
-                    }
+                    if(map[i][j]==2)map[i][j] = 0;
                 }
             }
-
-            //System.out.println(tmp);
-            count++;
-
+            cnt++;
 
         }
-        System.out.println(count);
+
+        System.out.println(cnt);
         System.out.println(prev);
     }
-    public static void bfs(int i, int j){
-        int n = map.length;
-        int m = map[0].length;
-        Queue<int[]> queue = new LinkedList<>();
-        queue.add(new int[]{i,j});
-        boolean[][] visited = new boolean[n][m];
+
+    public static void dfs(int i, int j){
         visited[i][j] = true;
-        while(!queue.isEmpty()){
-            int[]  tmp = queue.poll();
-            int x = tmp[0];
-            int y = tmp[1];
-            for(int k = 0; k<4; k++){
-                int nx = x + dx[k];
-                int ny = y + dy[k];
-                if(isRange(nx,ny,n,m)){
-                    if(map[nx][ny]==0 && !visited[nx][ny]){
-                        queue.add(new int[]{nx,ny});
-                        visited[nx][ny] = true;
-                    }
-                    else if(map[nx][ny]==1)map[nx][ny]=2;
+        for(int k = 0; k<4; k++){
+            int nx = i + dx[k];
+            int ny = j + dy[k];
+            if(isRange(nx,ny)&&!visited[nx][ny]){
+                if(map[nx][ny]==0){
+                    dfs(nx,ny);
+                }else if(map[nx][ny]==1){
+                    map[nx][ny] = 2;
                 }
             }
         }
 
-
-
     }
-    public static boolean isRange(int nx, int ny,int n, int m){
+
+    public static boolean isRange(int nx, int ny){
         if(nx>=0 && nx<n && ny>=0 && ny<m)return true;
         return false;
     }
