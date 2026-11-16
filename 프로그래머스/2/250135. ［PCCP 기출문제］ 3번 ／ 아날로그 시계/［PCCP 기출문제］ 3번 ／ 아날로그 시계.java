@@ -18,10 +18,10 @@ class Solution {
         int min  = (720 * m1 + 12 * s1);
         int sec  = 720 * s1;
 
-        int startTime = h1 * 3600 + m1 * 60 + s1;
+        int startT = h1 * 3600 + m1 * 60 + s1;
         int endTime   = h2 * 3600 + m2 * 60 + s2;
 
-        int time = endTime - startTime;
+        int time = endTime - startT;
 
         // 시작 시각에 이미 겹쳐 있다면 1번
         if(sec == min || sec == hour){
