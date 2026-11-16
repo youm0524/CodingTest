@@ -32,9 +32,9 @@ class Solution {
                 else left = Integer.MAX_VALUE;
             }
 
-            int min = Math.min(Math.min(left,right), Math.min(down,up));
+            int mi = Math.min(Math.min(left,right), Math.min(down,up));
 
-            answer[idx] = min;
+            answer[idx] = mi;
             idx++;
         }
 
