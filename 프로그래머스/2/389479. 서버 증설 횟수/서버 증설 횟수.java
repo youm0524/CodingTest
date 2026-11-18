@@ -1,6 +1,6 @@
 class Solution {
     public int solution(int[] players, int m, int k) {
-        int answer = 0;
+        int ans = 0;
         int[] server = new int[players.length];
 
         for(int i = 0; i<=23; i++){
@@ -9,9 +9,9 @@ class Solution {
                 for(int j = i; j<Math.min(i+k,players.length); j++){
                     server[j] += need;
                 }
-                answer+=need;
+                ans+=need;
             }
         }
-        return answer;
+        return ans;
     }
 }
